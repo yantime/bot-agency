@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { cerrarSesion } from "./actions";
 import ChatBot from "@/components/dashboard/ChatBot";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 // El middleware ya protege /dashboard, pero se vuelve a validar acá
 // por si el Server Component se renderiza sin pasar por el middleware.
@@ -37,10 +38,12 @@ export default async function DashboardPage() {
 
       <section className="mx-auto w-full max-w-3xl flex-1 px-6 py-8">
         <h1 className="mb-4 font-display text-xl font-semibold text-brand-ink">
-          Probá tu agente de ventas
+          Prueba tu agente de ventas
         </h1>
         <ChatBot />
       </section>
+
+      <WhatsAppButton />
     </main>
   );
 }

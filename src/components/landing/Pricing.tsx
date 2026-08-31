@@ -16,13 +16,26 @@ const planes = [
     destacado: false,
   },
   {
+    nombre: "Starter",
+    precio: "$39",
+    periodo: "/mes",
+    descripcion: "Para negocios que están arrancando con ventas por chat.",
+    caracteristicas: [
+      "3 bots de ventas",
+      "750 conversaciones/mes",
+      "Integración WhatsApp y web",
+      "Soporte por email",
+    ],
+    destacado: false,
+  },
+  {
     nombre: "Pro",
-    precio: "$49",
+    precio: "$99",
     periodo: "/mes",
     descripcion: "Para negocios que quieren escalar sus ventas.",
     caracteristicas: [
       "5 bots de ventas",
-      "5.000 conversaciones/mes",
+      "2.500 conversaciones/mes",
       "Integraciones con WhatsApp y web",
       "Reportes y analítica",
       "Soporte prioritario",
@@ -30,13 +43,13 @@ const planes = [
     destacado: true,
   },
   {
-    nombre: "Enterprise",
-    precio: "A medida",
-    periodo: "",
-    descripcion: "Para equipos con necesidades avanzadas.",
+    nombre: "Business",
+    precio: "$349",
+    periodo: "/mes",
+    descripcion: "Para equipos con alto volumen de conversaciones.",
     caracteristicas: [
       "Bots ilimitados",
-      "Conversaciones ilimitadas",
+      "Hasta 5.000 conversaciones/mes",
       "Integraciones personalizadas (CRM, ERP)",
       "SLA dedicado",
       "Account manager",
@@ -57,15 +70,15 @@ export default function Pricing() {
             Planes y precios
           </h2>
           <p className="mt-4 text-brand-ink/60">
-            Elegí el plan que mejor se adapte al tamaño de tu negocio.
+            Elige el plan que mejor se adapte al tamaño de tu negocio.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {planes.map((plan, i) => (
-            <Reveal key={plan.nombre} delay={i * 120} className="h-full">
+            <Reveal key={plan.nombre} delay={i * 100} className="h-full">
               <div
-                className={`flex h-full flex-col rounded-2xl border p-8 transition duration-300 hover:-translate-y-1 ${
+                className={`flex h-full flex-col rounded-2xl border p-7 transition duration-300 hover:-translate-y-1 ${
                   plan.destacado
                     ? "border-brand-ink bg-brand-ink text-white shadow-xl shadow-brand-ink/10 lg:scale-105"
                     : "border-brand-ink/10 bg-white text-brand-ink hover:shadow-lg"

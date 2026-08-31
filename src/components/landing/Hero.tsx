@@ -16,7 +16,7 @@ export default function Hero() {
             className="reveal is-visible mb-6 flex items-center gap-2 rounded-full border border-brand-ink/15 bg-white px-4 py-1 font-mono text-xs uppercase tracking-wider text-brand-ink/70"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-brand-yellow" />
-            Vendé mientras dormís, con IA
+            Vende mientras duermes, con IA
           </span>
 
           <h1
@@ -25,15 +25,15 @@ export default function Hero() {
           >
             Bots de ventas con IA que{" "}
             <span className="mark-yellow">atienden, califican</span> y{" "}
-            <span className="mark-yellow">cierran</span> por vos
+            <span className="mark-yellow">cierran</span> por ti
           </h1>
 
           <p
             className="reveal is-visible mt-6 max-w-xl text-lg text-brand-ink/70"
             style={{ animationDelay: "180ms" }}
           >
-            Automatizá la atención a tus clientes 24/7 con agentes de
-            inteligencia artificial entrenados para vender. Sin perder el
+            Un chatbot para WhatsApp ventas que atiende a tus clientes 24/7,
+            entrenado con inteligencia artificial para vender. Sin perder el
             trato humano.
           </p>
 

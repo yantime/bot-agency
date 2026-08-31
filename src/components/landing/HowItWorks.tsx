@@ -5,7 +5,7 @@ const pasos = [
     numero: "01",
     titulo: "Conectá tu bot",
     descripcion:
-      "Configurá tu agente de ventas en minutos, sin código. Definí tu producto, tono y objetivos.",
+      "Configura tu agente de ventas en minutos, sin código. Define tu producto, tono y objetivos.",
   },
   {
     numero: "02",
@@ -17,7 +17,7 @@ const pasos = [
     numero: "03",
     titulo: "Cerrás más ventas",
     descripcion:
-      "El bot guía la conversación hacia el cierre o agenda demos automáticamente. Vos solo recibís los resultados.",
+      "El bot guía la conversación hacia el cierre o agenda demos automáticamente. Tú solo recibes los resultados.",
   },
 ];
 

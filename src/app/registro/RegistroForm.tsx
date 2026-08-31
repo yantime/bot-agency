@@ -69,9 +69,9 @@ export default function RegistroForm() {
       <BotonSubmit />
 
       <p className="text-center text-sm text-gray-500">
-        ¿Ya tenés cuenta?{" "}
+        ¿Ya tienes cuenta?{" "}
         <Link href="/login" className="font-semibold text-brand-ink hover:underline">
-          Ingresá acá
+          Ingresa aquí
         </Link>
       </p>
     </form>

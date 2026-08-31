@@ -59,9 +59,9 @@ export default function LoginForm({ redirectTo }: { redirectTo: string }) {
       <BotonSubmit />
 
       <p className="text-center text-sm text-gray-500">
-        ¿No tenés cuenta?{" "}
+        ¿No tienes cuenta?{" "}
         <Link href="/registro" className="font-semibold text-brand-ink hover:underline">
-          Registrate
+          Regístrate
         </Link>
       </p>
     </form>

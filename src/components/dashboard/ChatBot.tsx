@@ -13,7 +13,7 @@ export default function ChatBot() {
       <div className="flex-1 space-y-4 overflow-y-auto p-6">
         {messages.length === 0 && (
           <p className="text-sm text-gray-400">
-            Escribí un mensaje para empezar a hablar con tu agente de ventas.
+            Escribe un mensaje para empezar a hablar con tu agente de ventas.
           </p>
         )}
 
@@ -53,7 +53,7 @@ export default function ChatBot() {
         <input
           value={input}
           onChange={handleInputChange}
-          placeholder="Escribí tu mensaje..."
+          placeholder="Escribe tu mensaje..."
           className="flex-1 rounded-lg border border-gray-300 px-4 py-2 text-sm outline-none focus:border-brand-ink"
         />
         <button

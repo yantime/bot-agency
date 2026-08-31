@@ -26,10 +26,39 @@ const serif = Source_Serif_4({
   variable: "--font-serif",
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const TITULO = "VentaBot IA | Chatbot para WhatsApp Ventas con Inteligencia Artificial";
+const DESCRIPCION =
+  "Crea un chatbot para WhatsApp ventas en minutos. Agentes de inteligencia artificial que atienden, califican y cierran clientes 24/7, sin perder el trato humano.";
+
 export const metadata: Metadata = {
-  title: "VentaBot IA | Bots de ventas con inteligencia artificial",
-  description:
-    "Automatizá tus ventas con agentes de IA que atienden, califican y cierran clientes 24/7.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: TITULO,
+    template: "%s | VentaBot IA",
+  },
+  description: DESCRIPCION,
+  keywords: [
+    "chatbot para WhatsApp ventas",
+    "bot de ventas con IA",
+    "chatbot de ventas",
+    "agente de ventas con inteligencia artificial",
+    "automatizar ventas por WhatsApp",
+  ],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    locale: "es_PE",
+    url: SITE_URL,
+    siteName: "VentaBot IA",
+    title: TITULO,
+    description: DESCRIPCION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITULO,
+    description: DESCRIPCION,
+  },
 };
 
 export default function RootLayout({
