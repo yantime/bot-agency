@@ -6,6 +6,7 @@ export default function ChatBot() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat({
       api: "/api/chat",
+      streamProtocol: "text",
     });
 
   return (
