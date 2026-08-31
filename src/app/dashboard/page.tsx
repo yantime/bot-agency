@@ -38,7 +38,7 @@ export default async function DashboardPage() {
 
       <section className="mx-auto w-full max-w-3xl flex-1 px-6 py-8">
         <h1 className="mb-4 font-display text-xl font-semibold text-brand-ink">
-          Prueba tu agente de ventas
+          Simula tu bot de WhatsApp
         </h1>
         <ChatBot />
       </section>
