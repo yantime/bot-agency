@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
+import { bloqueDePrompt, normalizar } from "@/lib/configuracion";
 
 
 export const runtime = "nodejs";
@@ -100,7 +101,7 @@ const PARAMETROS = {
   // de ventas no aporta y agrega segundos antes del primer token.
   thinking: { type: "disabled" },
   output_config: { effort: "low" },
-  system: SYSTEM_PROMPT,
+  // system se arma por request: lleva la configuración del usuario.
   tools: [
     {
       type: "web_fetch_20260209",
@@ -109,11 +110,14 @@ const PARAMETROS = {
       max_content_tokens: 6000,
     },
   ],
-} satisfies Omit<Anthropic.MessageCreateParams, "messages">;
+} satisfies Omit<Anthropic.MessageCreateParams, "messages" | "system">;
 
 // Tope de vueltas por turno cuando el modelo devuelve pause_turn (usa la
 // herramienta y sigue). Evita un bucle infinito si algo sale mal.
 const MAX_VUELTAS = 4;
+
+const ES_UUID =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 // El cliente manda el historial completo con los bloques de contenido tal
 // cual salieron de la API: así el resultado de web_fetch sobrevive entre
@@ -169,10 +173,29 @@ export async function POST(req: Request) {
     );
   }
 
+  // Lo que el usuario cargó en /dashboard/personalizacion. Si nunca lo tocó,
+  // no hay fila y el bot se comporta igual que antes.
+  const { data: configuracion } = await supabase
+    .from("configuracion_bot")
+    .select("*")
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  const system = configuracion
+    ? SYSTEM_PROMPT + bloqueDePrompt(normalizar(configuracion))
+    : SYSTEM_PROMPT;
+
   let historial: Anthropic.MessageParam[];
+  let conversacionId: string | null = null;
   try {
     const cuerpo = await req.json();
     historial = validarHistorial(cuerpo?.messages);
+    // Opcional: si no viene o viene mal, se sigue sin registrar métricas.
+    conversacionId =
+      typeof cuerpo?.conversacionId === "string" &&
+      ES_UUID.test(cuerpo.conversacionId)
+        ? cuerpo.conversacionId
+        : null;
   } catch (error) {
     return Response.json(
       { error: error instanceof Error ? error.message : "cuerpo inválido" },
@@ -201,6 +224,7 @@ export async function POST(req: Request) {
         for (let vuelta = 0; vuelta < MAX_VUELTAS; vuelta += 1) {
           const respuesta = anthropic.messages.stream({
             ...PARAMETROS,
+            system,
             messages: mensajes,
           });
 
@@ -224,6 +248,25 @@ export async function POST(req: Request) {
           // pause_turn: el modelo usó web_fetch y quiere seguir. Cualquier
           // otro stop_reason cierra el turno.
           if (final.stop_reason !== "pause_turn") break;
+        }
+
+        // Registro para /dashboard/metricas. Va después de responder y en su
+        // propio try: si falla, el usuario ya tiene su respuesta y no se
+        // rompe el chat por un problema de la base.
+        if (conversacionId) {
+          const { error } = await supabase.from("conversaciones").upsert(
+            {
+              id: conversacionId,
+              user_id: user.id,
+              canal: "simulador",
+              mensajes: mensajes.length,
+            },
+            { onConflict: "id" }
+          );
+
+          if (error) {
+            console.error("[VentaBot] No se registró la conversación:", error);
+          }
         }
 
         emitir({ t: "done", v: nuevos });

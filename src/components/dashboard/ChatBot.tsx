@@ -37,6 +37,11 @@ export default function ChatBot() {
   const [parcial, setParcial] = useState("");
   const [cargando, setCargando] = useState(false);
   const finRef = useRef<HTMLDivElement>(null);
+  // Identifica esta conversación para el registro de métricas. Se genera al
+  // enviar el primer mensaje, no al renderizar: durante el SSR no existe
+  // crypto.randomUUID y un valor distinto en servidor y cliente rompería
+  // la hidratación.
+  const conversacionRef = useRef<string | null>(null);
 
   useEffect(() => {
     finRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
@@ -65,7 +70,10 @@ export default function ChatBot() {
       const respuesta = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: base }),
+        body: JSON.stringify({
+          messages: base,
+          conversacionId: (conversacionRef.current ??= crypto.randomUUID()),
+        }),
       });
 
       // 401 (sin sesión), 429 (rate limit) y 400 (historial inválido) vienen
