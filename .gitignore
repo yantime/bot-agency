@@ -31,3 +31,8 @@ next-env.d.ts
 anotaciones.txt
 
 .agents
+
+# gestor de paquetes: el proyecto usa pnpm.
+# Un package-lock.json suelto hace que Vercel elija npm y el deploy falle.
+package-lock.json
+yarn.lock
