@@ -18,62 +18,67 @@ const GUION: Turno[] = [
 ];
 
 const VELOCIDAD_TIPEO = 22;
+const PAUSA_INICIAL = 500;
+const PAUSA_ENTRE_TURNOS = 700;
+const PAUSA_ANTES_DE_REINICIAR = 3200;
 
 export default function ChatPreview() {
   const [turnosVisibles, setTurnosVisibles] = useState(0);
+  const [indiceEscribiendo, setIndiceEscribiendo] = useState<number | null>(null);
   const [textoParcial, setTextoParcial] = useState("");
-  const [escribiendo, setEscribiendo] = useState(false);
 
   useEffect(() => {
     let cancelado = false;
-    let timeouts: ReturnType<typeof setTimeout>[] = [];
+    let timer: ReturnType<typeof setTimeout> | undefined;
 
-    function correrGuion() {
-      setTurnosVisibles(0);
-      setTextoParcial("");
-      let acumulado = 0;
-
-      GUION.forEach((turno, i) => {
-        const pausaAntes = i === 0 ? 500 : 700;
-        acumulado += pausaAntes;
-
-        timeouts.push(
-          setTimeout(() => {
-            if (cancelado) return;
-            setEscribiendo(true);
-            let caracter = 0;
-
-            const intervalo = setInterval(() => {
-              if (cancelado) {
-                clearInterval(intervalo);
-                return;
-              }
-              caracter += 1;
-              setTextoParcial(turno.texto.slice(0, caracter));
-
-              if (caracter >= turno.texto.length) {
-                clearInterval(intervalo);
-                setEscribiendo(false);
-                setTurnosVisibles(i + 1);
-                setTextoParcial("");
-              }
-            }, VELOCIDAD_TIPEO);
-          }, acumulado)
-        );
-
-        acumulado += turno.texto.length * VELOCIDAD_TIPEO;
+    // Un solo timer vivo a la vez y espera secuencial: los pasos no pueden
+    // solaparse aunque el navegador throttlee los timers (pestaña en segundo
+    // plano, CPU cargada). La versión anterior pre-agendaba todos los turnos
+    // con offsets calculados y los ciclos se pisaban entre sí.
+    const esperar = (ms: number) =>
+      new Promise<void>((resolve) => {
+        timer = setTimeout(resolve, ms);
       });
 
-      timeouts.push(setTimeout(correrGuion, acumulado + 3200));
+    async function correrGuion() {
+      while (!cancelado) {
+        setTurnosVisibles(0);
+        setIndiceEscribiendo(null);
+        setTextoParcial("");
+
+        for (let i = 0; i < GUION.length; i += 1) {
+          await esperar(i === 0 ? PAUSA_INICIAL : PAUSA_ENTRE_TURNOS);
+          if (cancelado) return;
+
+          const { texto } = GUION[i];
+          setIndiceEscribiendo(i);
+          setTextoParcial("");
+
+          for (let caracter = 1; caracter <= texto.length; caracter += 1) {
+            await esperar(VELOCIDAD_TIPEO);
+            if (cancelado) return;
+            setTextoParcial(texto.slice(0, caracter));
+          }
+
+          setIndiceEscribiendo(null);
+          setTextoParcial("");
+          setTurnosVisibles(i + 1);
+        }
+
+        await esperar(PAUSA_ANTES_DE_REINICIAR);
+        if (cancelado) return;
+      }
     }
 
     correrGuion();
 
     return () => {
       cancelado = true;
-      timeouts.forEach(clearTimeout);
+      if (timer) clearTimeout(timer);
     };
   }, []);
+
+  const turnoEnCurso = indiceEscribiendo === null ? null : GUION[indiceEscribiendo];
 
   return (
     <div className="relative w-full max-w-sm rounded-2xl border border-brand-ink/10 bg-white p-4 shadow-2xl shadow-brand-ink/10">
@@ -92,14 +97,8 @@ export default function ChatPreview() {
           <Burbuja key={i} turno={turno} />
         ))}
 
-        {escribiendo && (
-          <Burbuja
-            turno={{
-              rol: GUION[turnosVisibles].rol,
-              texto: textoParcial,
-            }}
-            cursor
-          />
+        {turnoEnCurso && (
+          <Burbuja turno={{ rol: turnoEnCurso.rol, texto: textoParcial }} cursor />
         )}
       </div>
     </div>
