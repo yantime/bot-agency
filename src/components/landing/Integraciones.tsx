@@ -21,7 +21,7 @@ const CONEXIONES: {
   },
   {
     nombre: "Simulador",
-    detalle: "Probá tu bot acá",
+    detalle: "Prueba tu bot aquí",
     estado: "activo",
     icono: (
       <path d="M4 4.6h16c.7 0 1.2.6 1.2 1.3v9c0 .7-.5 1.3-1.2 1.3h-8.3l-4.4 3.4a.8.8 0 0 1-1.3-.6v-2.8H4c-.7 0-1.2-.6-1.2-1.3v-9c0-.7.5-1.3 1.2-1.3Zm.4 1.7v8.2h2.8c.5 0 .8.4.8.9v1.9l3-2.6c.2-.1.4-.2.6-.2h8V6.3H4.4Z" />

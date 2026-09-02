@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 const pasos = [
   {
     numero: "01",
-    titulo: "Conectá tu bot",
+    titulo: "Conecta tu bot",
     descripcion:
       "Configura tu agente de ventas en minutos, sin código. Define tu producto, tono y objetivos.",
   },
@@ -15,7 +15,7 @@ const pasos = [
   },
   {
     numero: "03",
-    titulo: "Cerrás más ventas",
+    titulo: "Cierras más ventas",
     descripcion:
       "El bot guía la conversación hacia el cierre o agenda demos automáticamente. Tú solo recibes los resultados.",
   },
