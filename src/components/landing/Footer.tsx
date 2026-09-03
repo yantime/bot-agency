@@ -5,11 +5,11 @@ export default function Footer() {
     <footer className="bg-brand-ink py-12 text-white/60">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 px-6 sm:flex-row">
         <span className="font-display text-lg font-semibold text-white">
-          VentaBot<span className="text-brand-yellow">IA</span>
+          Angie<span className="text-brand-yellow">bot</span>
         </span>
 
         <p className="text-sm">
-          © {new Date().getFullYear()} VentaBot IA. Todos los derechos
+          © {new Date().getFullYear()} Angie. Todos los derechos
           reservados.
         </p>
 

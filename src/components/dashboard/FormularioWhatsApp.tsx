@@ -27,7 +27,7 @@ export default function FormularioWhatsApp({
         </h2>
         <p className="mt-1.5 text-sm text-brand-ink/60">
           Te escribimos a ese mismo número para hacer la verificación con Meta y
-          dejar el bot andando.
+          dejar a Angie andando.
         </p>
         <form action={cancelarSolicitud} className="mt-3">
           <button
@@ -47,7 +47,7 @@ export default function FormularioWhatsApp({
         htmlFor="numero"
         className="block font-display text-sm font-semibold text-brand-ink"
       >
-        ¿En qué número quieres que atienda tu bot?
+        ¿En qué número quieres que atienda Angie?
       </label>
       <p className="mt-1 text-sm text-brand-ink/55">
         Con código de país, como aparece en tu WhatsApp.

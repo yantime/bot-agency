@@ -12,7 +12,7 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("[VentaBot] Error de cliente:", error);
+    console.error("[Angie] Error de cliente:", error);
   }, [error]);
 
   return (

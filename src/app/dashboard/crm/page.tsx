@@ -98,7 +98,7 @@ export default async function CrmPage({
             CRM
           </h1>
           <p className="mt-1 text-sm text-brand-ink/55">
-            Las personas que le escriben a tu bot, y en qué punto de la venta
+            Las personas que le escriben a Angie, y en qué punto de la venta
             está cada una.
           </p>
         </div>
@@ -171,7 +171,7 @@ export default async function CrmPage({
                     <p className="mx-auto mt-2 max-w-md text-sm text-brand-ink/55">
                       {busqueda || filtro
                         ? "Prueba con otro nombre o quita los filtros."
-                        : "Cuando conectes WhatsApp, cada persona que le escriba a tu bot aparece acá sola. Mientras tanto, puedes cargarlos a mano."}
+                        : "Cuando conectes WhatsApp, cada persona que le escriba a Angie aparece acá sola. Mientras tanto, puedes cargarlos a mano."}
                     </p>
                   </td>
                 </tr>

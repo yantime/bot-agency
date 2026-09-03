@@ -8,7 +8,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2 font-display">
           <span className="h-2 w-2 rounded-full bg-brand-yellow" />
           <span className="text-xl font-semibold text-brand-ink">
-            VentaBot<span className="mark-yellow">IA</span>
+            Angie<span className="mark-yellow">bot</span>
           </span>
         </Link>
 

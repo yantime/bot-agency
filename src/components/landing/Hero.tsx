@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-brand-mist bg-brand-radial">
       {/* Ficha amarilla de esquina — guiño al tab fijo "¡Hola, charlemos!" de staffdigital.pe */}
       <div className="absolute right-0 top-0 hidden -rotate-3 translate-x-3 -translate-y-1 bg-brand-yellow px-5 py-3 font-mono text-xs font-medium uppercase tracking-wide text-brand-ink sm:block">
-        Probalo ahora ↓
+        Habla con Angie ↓
       </div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:py-32">
@@ -16,25 +16,25 @@ export default function Hero() {
             className="reveal is-visible mb-6 flex items-center gap-2 rounded-full border border-brand-ink/15 bg-white px-4 py-1 font-mono text-xs uppercase tracking-wider text-brand-ink/70"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-brand-yellow" />
-            Vende mientras duermes, con IA
+            Angie vende mientras duermes
           </span>
 
           <h1
             className="reveal is-visible font-display text-4xl font-semibold leading-[1.05] tracking-tight text-brand-ink sm:text-5xl md:text-6xl"
             style={{ animationDelay: "80ms" }}
           >
-            Bots de ventas con IA que{" "}
-            <span className="mark-yellow">atienden, califican</span> y{" "}
-            <span className="mark-yellow">cierran</span> por ti
+            Angie te ayuda a{" "}
+            <span className="mark-yellow">atender, calificar</span> y{" "}
+            <span className="mark-yellow">cerrar</span> ventas por ti
           </h1>
 
           <p
             className="reveal is-visible mt-6 max-w-xl text-lg text-brand-ink/70"
             style={{ animationDelay: "180ms" }}
           >
-            Un chatbot para WhatsApp ventas que atiende a tus clientes 24/7,
-            entrenado con inteligencia artificial para vender. Sin perder el
-            trato humano.
+            Angie es tu vendedora con inteligencia artificial: responde tu
+            WhatsApp 24/7, entiende qué busca cada cliente y lo lleva al cierre.
+            Sin perder el trato humano.
           </p>
 
           <div
@@ -52,7 +52,7 @@ export default function Hero() {
               href="#como-funciona"
               className="group flex items-center gap-3 rounded-full border border-brand-ink/20 py-2 pl-6 pr-2 font-semibold text-brand-ink transition hover:border-brand-ink"
             >
-              Ver cómo funciona
+              Ver cómo trabaja Angie
               <ArrowButton variant="ink" className="h-9 w-9" />
             </a>
           </div>

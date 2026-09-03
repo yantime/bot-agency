@@ -9,7 +9,7 @@ const PASOS = [
   {
     titulo: "Dejas tu número",
     detalle:
-      "El número de WhatsApp Business donde quieres que atienda el bot. Si todavía no tienes uno, se puede crear en el momento.",
+      "El número de WhatsApp Business donde quieres que atienda Angie. Si todavía no tienes uno, se puede crear en el momento.",
   },
   {
     titulo: "Verificamos el número con Meta",
@@ -17,9 +17,9 @@ const PASOS = [
       "Se registra en la WhatsApp Business Platform y se verifica que el número sea tuyo. Es el paso que hace Meta, no nosotros.",
   },
   {
-    titulo: "Conectamos tu bot",
+    titulo: "Conectamos a Angie",
     detalle:
-      "Tu bot queda atendiendo ese número 24/7 con la configuración que cargaste en Personalización.",
+      "Angie queda atendiendo ese número 24/7 con la configuración que cargaste en Personalización.",
   },
 ];
 
@@ -49,7 +49,7 @@ export default async function WhatsAppPage() {
             WhatsApp
           </h1>
           <p className="mt-1 text-sm text-brand-ink/55">
-            Pon tu bot a atender clientes reales en tu número de WhatsApp.
+            Pon a Angie a atender clientes reales en tu número de WhatsApp.
           </p>
         </div>
         <Chip estado={estado} />
@@ -58,7 +58,7 @@ export default async function WhatsAppPage() {
       {conectado ? (
         <div className="mt-6 rounded-xl border border-brand-ink/10 bg-white p-6">
           <h2 className="font-display text-base font-semibold text-brand-ink">
-            Tu bot está atendiendo en {conexion?.numero}
+            Angie está atendiendo en {conexion?.numero}
           </h2>
           <p className="mt-2 text-sm text-brand-ink/60">
             Cada conversación queda registrada en el CRM y suma a tus métricas.
@@ -121,7 +121,7 @@ export default async function WhatsAppPage() {
       <p className="mt-6 text-xs text-brand-ink/45">
         La conexión con la WhatsApp Business Platform de Meta está en
         desarrollo. Dejar tu número reserva tu lugar y nos avisa para
-        configurarlo contigo; mientras tanto, puedes probar el bot en el{" "}
+        configurarlo contigo; mientras tanto, puedes probar a Angie en el{" "}
         <Link href="/dashboard" className="underline underline-offset-2">
           simulador
         </Link>

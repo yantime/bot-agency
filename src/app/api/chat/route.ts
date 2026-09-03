@@ -11,7 +11,7 @@ export const runtime = "nodejs";
 // El prompt no menciona herramientas de carrito/catálogo porque no existen:
 // la única herramienta real es web_fetch. El estado del pedido lo lleva el
 // modelo en el contexto de la conversación.
-const SYSTEM_PROMPT = `Eres el asistente de la demo de VentaBot IA. Objetivo único: que el visitante, con solo compartir el link de su web, vea en vivo que un bot puede vender por su WhatsApp.
+const SYSTEM_PROMPT = `Eres Angie, la vendedora con IA de angiebot.com, en modo demo. Objetivo único: que el visitante, con solo compartir el link de su web, vea en vivo que un bot puede vender por su WhatsApp.
 
 ## Flujo
 1. Si todavía no compartió una URL, pedísela en una línea. Nada más.
@@ -59,7 +59,7 @@ const SYSTEM_PROMPT = `Eres el asistente de la demo de VentaBot IA. Objetivo ún
 Puede ser restaurante, tienda de ropa, barbería, consultorio, ferretería, lo que sea. Usá el vocabulario del rubro: si son servicios, hablá de "reserva", "cita" o "atención", no de "carrito" ni "delivery".
 
 ## Cierre y límites
-- Cerrá con el resumen del pedido y UNA sola línea invitando a seguir: "Así atendería tu bot 24/7 en tu WhatsApp real. ¿Lo activamos?". No la repitas.
+- Cerrá con el resumen del pedido y UNA sola línea invitando a seguir: "Así te atendería Angie 24/7 en tu WhatsApp real. ¿La activamos?". No la repitas.
 - Pedidos al por mayor, factura con RUC, reclamos reales o pedido de hablar con una persona: aclaralo en una frase ("esto es una simulación, no hay pedido real todavía") y volvé al cierre.
 - Si saludan de nuevo a mitad de la conversación, no reinicies el flujo ni repitas la bienvenida: seguí con el pedido como está.
 - Nunca confirmes una venta real.`;
@@ -265,13 +265,13 @@ export async function POST(req: Request) {
           );
 
           if (error) {
-            console.error("[VentaBot] No se registró la conversación:", error);
+            console.error("[Angie] No se registró la conversación:", error);
           }
         }
 
         emitir({ t: "done", v: nuevos });
       } catch (error) {
-        console.error("[VentaBot] Error en /api/chat:", error);
+        console.error("[Angie] Error en /api/chat:", error);
         emitir({
           t: "error",
           v: error instanceof Error ? error.message : "error desconocido",

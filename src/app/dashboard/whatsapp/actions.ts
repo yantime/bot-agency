@@ -45,7 +45,7 @@ export async function solicitarConexion(
   );
 
   if (error) {
-    console.error("[VentaBot] Error guardando conexión de WhatsApp:", error);
+    console.error("[Angie] Error guardando conexión de WhatsApp:", error);
     return { ok: false, mensaje: "No pudimos guardar tu solicitud." };
   }
 
@@ -71,7 +71,7 @@ export async function cancelarSolicitud(): Promise<void> {
     .eq("user_id", user.id);
 
   if (error) {
-    console.error("[VentaBot] Error cancelando la solicitud:", error);
+    console.error("[Angie] Error cancelando la solicitud:", error);
   }
 
   revalidatePath("/dashboard/whatsapp");

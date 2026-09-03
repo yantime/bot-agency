@@ -24,7 +24,7 @@ export default async function DashboardLayout({
     <div className="flex min-h-screen flex-col bg-brand-mist">
       <header className="flex items-center justify-between border-b border-brand-ink/10 bg-white px-6 py-4">
         <span className="font-display text-lg font-semibold text-brand-ink">
-          VentaBot<span className="mark-yellow">IA</span>
+          Angie<span className="mark-yellow">bot</span>
         </span>
 
         <div className="flex items-center gap-4">

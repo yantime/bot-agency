@@ -27,18 +27,20 @@ const serif = Source_Serif_4({
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-const TITULO = "VentaBot IA | Chatbot para WhatsApp Ventas con Inteligencia Artificial";
+const TITULO = "Angie | Tu vendedora con IA que atiende tu WhatsApp 24/7";
 const DESCRIPCION =
-  "Crea un chatbot para WhatsApp ventas en minutos. Agentes de inteligencia artificial que atienden, califican y cierran clientes 24/7, sin perder el trato humano.";
+  "Angie te ayuda a vender por WhatsApp sin estar conectado: responde a tus clientes, califica interesados y cierra ventas 24/7 con inteligencia artificial, sin perder el trato humano.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITULO,
-    template: "%s | VentaBot IA",
+    template: "%s | Angie",
   },
   description: DESCRIPCION,
   keywords: [
+    "Angie",
+    "angiebot",
     "chatbot para WhatsApp ventas",
     "bot de ventas con IA",
     "chatbot de ventas",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_PE",
     url: SITE_URL,
-    siteName: "VentaBot IA",
+    siteName: "Angie",
     title: TITULO,
     description: DESCRIPCION,
   },

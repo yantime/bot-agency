@@ -76,7 +76,7 @@ export default async function MetricasPage({
         Métricas
       </h1>
       <p className="mt-1 text-sm text-brand-ink/55">
-        Lo que gestionó tu bot en el período seleccionado.
+        Lo que gestionó Angie en el período seleccionado.
       </p>
 
       <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
@@ -120,7 +120,7 @@ export default async function MetricasPage({
 
       {canal.clave === "simulador" && conversaciones > 0 && (
         <p className="mt-3 text-xs text-brand-ink/45">
-          Son tus propias pruebas del bot, no clientes reales. El simulador no
+          Son tus propias pruebas con Angie, no clientes reales. El simulador no
           cierra ventas, así que las ventas siempre quedan en cero acá.
         </p>
       )}
@@ -137,13 +137,13 @@ function Vacio({ canal }: { canal: string }) {
     <div className="mt-6 rounded-xl border border-dashed border-brand-ink/20 bg-white p-8 text-center">
       <p className="font-display text-base font-medium text-brand-ink">
         {esSimulador
-          ? "Todavía no probaste el bot en este período"
+          ? "Todavía no probaste a Angie en este período"
           : "Todavía no hay conversaciones con clientes en este período"}
       </p>
       <p className="mx-auto mt-2 max-w-md text-sm text-brand-ink/55">
         {esSimulador
           ? "Cada charla que tengas en el simulador queda registrada acá."
-          : "Los números se llenan cuando tu bot empiece a atender clientes reales por WhatsApp. Mientras tanto, puedes probarlo en el simulador."}
+          : "Los números se llenan cuando Angie empiece a atender clientes reales por WhatsApp. Mientras tanto, puedes probarla en el simulador."}
       </p>
       <Link
         href="/dashboard"

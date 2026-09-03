@@ -31,7 +31,7 @@ export async function guardarConfiguracion(
   );
 
   if (error) {
-    console.error("[VentaBot] Error guardando configuración:", error);
+    console.error("[Angie] Error guardando configuración:", error);
     return {
       ok: false,
       mensaje: "No pudimos guardar los cambios. Intenta de nuevo.",

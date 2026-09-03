@@ -39,7 +39,7 @@ export async function crearContacto(
   });
 
   if (error) {
-    console.error("[VentaBot] Error creando contacto:", error);
+    console.error("[Angie] Error creando contacto:", error);
     return { ok: false, mensaje: "No pudimos guardar el contacto." };
   }
 
@@ -68,7 +68,7 @@ export async function cambiarEstado(datos: FormData): Promise<void> {
     .eq("user_id", user.id);
 
   if (error) {
-    console.error("[VentaBot] Error cambiando estado:", error);
+    console.error("[Angie] Error cambiando estado:", error);
   }
 
   revalidatePath("/dashboard/crm");
@@ -92,7 +92,7 @@ export async function borrarContacto(datos: FormData): Promise<void> {
     .eq("user_id", user.id);
 
   if (error) {
-    console.error("[VentaBot] Error borrando contacto:", error);
+    console.error("[Angie] Error borrando contacto:", error);
   }
 
   revalidatePath("/dashboard/crm");

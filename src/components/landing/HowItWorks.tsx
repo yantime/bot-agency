@@ -3,21 +3,21 @@ import Reveal from "@/components/Reveal";
 const pasos = [
   {
     numero: "01",
-    titulo: "Conecta tu bot",
+    titulo: "Entrenas a Angie",
     descripcion:
-      "Configura tu agente de ventas en minutos, sin código. Define tu producto, tono y objetivos.",
+      "Le cuentas qué vendes, con qué tono hablar y qué objetivo tiene. En minutos, sin código.",
   },
   {
     numero: "02",
-    titulo: "El bot conversa",
+    titulo: "Angie conversa",
     descripcion:
-      "La IA responde a tus clientes en tiempo real, resuelve dudas y detecta oportunidades de venta.",
+      "Angie responde a tus clientes en tiempo real, resuelve dudas y detecta oportunidades de venta.",
   },
   {
     numero: "03",
     titulo: "Cierras más ventas",
     descripcion:
-      "El bot guía la conversación hacia el cierre o agenda demos automáticamente. Tú solo recibes los resultados.",
+      "Angie guía la conversación hacia el cierre o agenda demos automáticamente. Tú solo recibes los resultados.",
   },
 ];
 
@@ -30,11 +30,10 @@ export default function HowItWorks() {
             El flujo
           </span>
           <h2 className="mt-3 font-display text-3xl font-semibold text-brand-ink sm:text-4xl">
-            Cómo funciona
+            Cómo funciona Angie
           </h2>
           <p className="mt-4 text-brand-ink/60">
-            Tres pasos simples para tener tu equipo de ventas con IA
-            funcionando.
+            Tres pasos simples para tener a Angie vendiendo por ti.
           </p>
         </Reveal>
 

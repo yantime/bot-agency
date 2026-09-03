@@ -21,7 +21,7 @@ const CONEXIONES: {
   },
   {
     nombre: "Simulador",
-    detalle: "Prueba tu bot aquí",
+    detalle: "Prueba a Angie aquí",
     estado: "activo",
     icono: (
       <path d="M4 4.6h16c.7 0 1.2.6 1.2 1.3v9c0 .7-.5 1.3-1.2 1.3h-8.3l-4.4 3.4a.8.8 0 0 1-1.3-.6v-2.8H4c-.7 0-1.2-.6-1.2-1.3v-9c0-.7.5-1.3 1.2-1.3Zm.4 1.7v8.2h2.8c.5 0 .8.4.8.9v1.9l3-2.6c.2-.1.4-.2.6-.2h8V6.3H4.4Z" />
@@ -78,7 +78,7 @@ export default function Integraciones() {
             Canales y conexiones
           </span>
           <h2 className="mt-3 font-display text-2xl font-semibold text-brand-ink sm:text-3xl">
-            Dónde vive tu bot
+            Dónde trabaja Angie
           </h2>
         </Reveal>
 
@@ -131,7 +131,7 @@ export default function Integraciones() {
 
         <Reveal delay={200}>
           <p className="mt-6 text-center text-sm text-brand-ink/50">
-            ¿Necesitás WhatsApp funcionando ya?{" "}
+            ¿Necesitas a Angie en tu WhatsApp ya?{" "}
             <a
               href="#precios"
               className="border-b border-brand-ink/30 text-brand-ink transition hover:border-brand-yellow-deep"

@@ -85,7 +85,7 @@ export default function FormularioPersonalizacion({
         <Campo
           etiqueta="Descripción de la empresa"
           htmlFor="descripcion_empresa"
-          ayuda="Qué vendés, a quién y qué te diferencia. El bot lo usa para responder."
+          ayuda="Qué vendés, a quién y qué te diferencia. Angie lo usa para responder."
           ancho
         >
           <textarea

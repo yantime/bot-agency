@@ -8,7 +8,7 @@ const GUION: Turno[] = [
   { rol: "cliente", texto: "Hola, ¿tienen planes para equipos chicos?" },
   {
     rol: "bot",
-    texto: "¡Sí! El plan Pro incluye 5 bots y 2.500 conversaciones/mes. ¿Cuántos son en tu equipo?",
+    texto: "¡Sí! El plan Pro incluye 5 Angies y 2.500 conversaciones/mes. ¿Cuántos son en tu equipo?",
   },
   { rol: "cliente", texto: "Somos 3, vendemos productos de belleza." },
   {
@@ -88,7 +88,7 @@ export default function ChatPreview() {
           <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-yellow-deep" />
         </span>
         <span className="font-mono text-xs uppercase tracking-wider text-brand-ink/50">
-          Agente de ventas · en línea
+          Angie · en línea
         </span>
       </div>
 

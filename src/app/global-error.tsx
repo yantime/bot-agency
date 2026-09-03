@@ -12,7 +12,7 @@ export default function GlobalError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("[VentaBot] Error global:", error);
+    console.error("[Angie] Error global:", error);
   }, [error]);
 
   return (

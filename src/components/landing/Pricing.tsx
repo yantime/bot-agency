@@ -6,9 +6,9 @@ const planes = [
     nombre: "Free",
     precio: "$0",
     periodo: "/mes",
-    descripcion: "Para probar la plataforma sin compromiso.",
+    descripcion: "Para conocer a Angie sin compromiso.",
     caracteristicas: [
-      "1 bot de ventas",
+      "1 Angie para tu negocio",
       "100 conversaciones/mes",
       "Integración web básica",
       "Soporte por comunidad",
@@ -21,7 +21,7 @@ const planes = [
     periodo: "/mes",
     descripcion: "Para negocios que están arrancando con ventas por chat.",
     caracteristicas: [
-      "3 bots de ventas",
+      "3 Angies en paralelo",
       "750 conversaciones/mes",
       "Integración WhatsApp y web",
       "Soporte por email",
@@ -34,7 +34,7 @@ const planes = [
     periodo: "/mes",
     descripcion: "Para negocios que quieren escalar sus ventas.",
     caracteristicas: [
-      "5 bots de ventas",
+      "5 Angies en paralelo",
       "2.500 conversaciones/mes",
       "Integraciones con WhatsApp y web",
       "Reportes y analítica",
@@ -48,7 +48,7 @@ const planes = [
     periodo: "/mes",
     descripcion: "Para equipos con alto volumen de conversaciones.",
     caracteristicas: [
-      "Bots ilimitados",
+      "Angies ilimitadas",
       "Hasta 5.000 conversaciones/mes",
       "Integraciones personalizadas (CRM, ERP)",
       "SLA dedicado",
@@ -70,7 +70,7 @@ export default function Pricing() {
             Planes y precios
           </h2>
           <p className="mt-4 text-brand-ink/60">
-            Elige el plan que mejor se adapte al tamaño de tu negocio.
+            Elige cuánto quieres que Angie trabaje por ti.
           </p>
         </Reveal>
 

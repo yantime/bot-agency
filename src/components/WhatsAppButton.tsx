@@ -1,5 +1,5 @@
 const NUMERO_WHATSAPP = "51941990526";
-const MENSAJE = "Hola, quiero saber más sobre chatbot para WhatsApp ventas";
+const MENSAJE = "Hola, quiero saber más sobre Angie para vender por WhatsApp";
 
 export default function WhatsAppButton() {
   const href = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(MENSAJE)}`;

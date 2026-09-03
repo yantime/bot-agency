@@ -1,8 +1,9 @@
-# VentaBot IA
+# Angie (angiebot.com)
 
-Plataforma de bots de ventas con inteligencia artificial. Landing page +
-autenticación con Supabase + dashboard con chat en tiempo real conectado a
-Claude (claude-sonnet-5).
+Angie es una vendedora con inteligencia artificial que atiende WhatsApp:
+responde, califica y cierra ventas 24/7. Landing page + autenticación con
+Supabase + dashboard con chat en tiempo real conectado a Claude
+(claude-sonnet-5).
 
 ## Stack
 
