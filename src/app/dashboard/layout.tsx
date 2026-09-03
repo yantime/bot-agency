@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { cerrarSesion } from "./actions";
@@ -6,6 +7,11 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 // El middleware ya protege /dashboard, pero se vuelve a validar acá
 // por si el Server Component se renderiza sin pasar por el middleware.
+// Hereda a todo /dashboard/*: son pantallas con sesión, nunca indexables.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
+
 export default async function DashboardLayout({
   children,
 }: {

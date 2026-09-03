@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
+import { SITE_URL } from "@/lib/site";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -26,7 +27,6 @@ const serif = Source_Serif_4({
   variable: "--font-serif",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const TITULO = "Angie | Tu vendedora con IA que atiende tu WhatsApp 24/7";
 const DESCRIPCION =
   "Angie te ayuda a vender por WhatsApp sin estar conectado: responde a tus clientes, califica interesados y cierra ventas 24/7 con inteligencia artificial, sin perder el trato humano.";

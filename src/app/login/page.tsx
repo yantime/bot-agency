@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import LoginForm from "./LoginForm";
+
+// Pantalla de sesión: no aporta nada en resultados de búsqueda.
+export const metadata: Metadata = {
+  title: "Iniciar sesión",
+  robots: { index: false, follow: false },
+};
 
 export default function LoginPage({
   searchParams,

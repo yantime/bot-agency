@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import RegistroForm from "./RegistroForm";
+
+export const metadata: Metadata = {
+  title: "Crea tu cuenta gratis",
+  description:
+    "Empieza a usar Angie gratis, sin tarjeta de crédito. Conecta tu WhatsApp y deja que atienda a tus clientes 24/7.",
+  alternates: { canonical: "/registro" },
+};
 
 export default function RegistroPage() {
   return (
