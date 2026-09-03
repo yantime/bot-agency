@@ -50,7 +50,7 @@ export default async function DashboardLayout({
 
       <div className="flex flex-1">
         <Sidebar />
-        <main className="min-w-0 flex-1 px-6 py-8">{children}</main>
+        <main className="min-w-0 flex-1 px-6 pb-28 pt-8">{children}</main>
       </div>
 
       <WhatsAppButton />

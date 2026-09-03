@@ -4,7 +4,7 @@ import type Anthropic from "@anthropic-ai/sdk";
 import { useEffect, useRef, useState } from "react";
 
 const MENSAJE_BIENVENIDA =
-  "¡Hola! Soy Angie. Comparte el link de tu web y te muestro cómo le respondería a un cliente tuyo por WhatsApp.";
+  "¡Hola! Soy Angie 😊 Comparte el link de tu web y te muestro cómo le respondería a un cliente tuyo por WhatsApp.";
 
 const HISTORIAL_INICIAL: Anthropic.MessageParam[] = [
   { role: "assistant", content: MENSAJE_BIENVENIDA },

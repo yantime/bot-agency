@@ -8,12 +8,12 @@ const GUION: Turno[] = [
   { rol: "cliente", texto: "Hola, ¿tienen planes para equipos chicos?" },
   {
     rol: "bot",
-    texto: "¡Sí! El plan Pro incluye 5 Angies y 2.500 conversaciones/mes. ¿Cuántos son en tu equipo?",
+    texto: "¡Sí! 🙌 El plan Pro incluye 5 Angies y 2.500 conversaciones/mes. ¿Cuántos son en tu equipo?",
   },
   { rol: "cliente", texto: "Somos 3, vendemos productos de belleza." },
   {
     rol: "bot",
-    texto: "Perfecto para tu rubro. Te agendo una demo de 15 min esta semana, ¿te viene bien el jueves?",
+    texto: "Perfecto para tu rubro 💛 Te agendo una demo de 15 min esta semana, ¿te viene bien el jueves?",
   },
 ];
 
